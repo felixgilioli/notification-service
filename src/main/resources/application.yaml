@@ -1,3 +1,28 @@
+server:
+  port: 8083
+
 spring:
   application:
     name: notification-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:seu-email@gmail.com}
+    password: ${MAIL_PASSWORD:sua-app-password}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+
+sqs:
+  endpoint: ${SQS_ENDPOINT:http://localhost:4566}
+  region: ${SQS_REGION:us-east-1}
+  access-key: ${SQS_ACCESS_KEY:test}
+  secret-key: ${SQS_SECRET_KEY:test}
+  notification-queue: ${SQS_NOTIFICATION_QUEUE:notification-queue}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
