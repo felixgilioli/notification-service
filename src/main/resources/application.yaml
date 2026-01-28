@@ -21,8 +21,20 @@ sqs:
   secret-key: ${SQS_SECRET_KEY:test}
   notification-queue: ${SQS_NOTIFICATION_QUEUE:notification-queue}
 
+# Actuator - Health checks e Metrics
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,prometheus
+        include: health,info,metrics,prometheus
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  prometheus:
+    metrics:
+      export:
+        enabled: true
