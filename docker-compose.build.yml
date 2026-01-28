@@ -1,0 +1,4 @@
+services:
+  notification-service:
+    build: .
+    image: felixgilioli/notification-service
