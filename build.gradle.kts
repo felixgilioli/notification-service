@@ -26,6 +26,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("tools.jackson.module:jackson-module-kotlin")
 	implementation("software.amazon.awssdk:sqs:2.25.60")
+	implementation("org.springframework.boot:spring-boot-starter-opentelemetry")
 	runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 	testImplementation("org.springframework.boot:spring-boot-starter-actuator-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-mail-test")
