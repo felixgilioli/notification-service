@@ -1,6 +1,6 @@
 package br.com.felixgilioli.notificationservice.dto
 
-import java.util.UUID
+import java.util.*
 
 data class VideoCompletedEvent(
     val videoId: UUID,
